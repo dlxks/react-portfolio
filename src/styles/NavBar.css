@@ -1,0 +1,75 @@
+/* Page background */
+body {
+  background-color: #f8f9fa;
+}
+
+/* Floating nav button */
+.nav-button {
+  display: inline-block;
+  background: none;
+  color: rgba(43, 43, 43, 0.925);
+  background-color: #ffffff;
+  text-transform: uppercase;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0px 12px 10px -10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  position: fixed;
+  top: 20px;
+  z-index: 1000;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-button {
+    margin: 10px 0 0 15px;
+  }
+}
+
+.nav-button:hover {
+  background-color: rgb(65, 65, 65);
+  color: rgb(226, 226, 226);
+  box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Offcanvas nav links */
+.offcanvas-body .nav-link {
+  font-family: var(--nav-font);
+  font-size: 1rem;
+  padding: 0.75rem 0;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.offcanvas-body .nav-link:hover {
+  color: #000;
+  background-color: transparent;
+  transform: translateX(2px);
+  text-decoration: none;
+}
+
+/* Highlight active section */
+.offcanvas-body .nav-link.active {
+  color: #0077ff;
+  font-weight: 600;
+}
+
+/* Icon alignment and spacing */
+.offcanvas-body .nav-link svg {
+  margin-right: 8px;
+  transition: color 0.3s ease;
+}
+
+/* Offcanvas title style */
+.offcanvas-title {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #222;
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "category": "experience",
+    "id": 1,
+    "company": "Schneider Electric",
+    "position": "Order Entry Administrator",
+    "duration": "June 2023 – April 2025",
+    "description": [
+      "Supported internal digital systems and streamlined order processing using SAP S/4HANA, ensuring accuracy and efficiency in cross-functional operations.",
+      "Collaborated across departments to resolve order discrepancies, automate workflows, and improve system reliability—skills transferable to software and system process optimization.",
+      "Led onboarding sessions and provided technical guidance to new hires, including system navigation and data entry best practices.",
+      "Acted as a key support point for digital operations, reflecting adaptability, attention to detail, and the ability to manage complex systems—valuable traits for backend and systems development roles."
+    ]
+  },
+  {
+    "category": "experience",
+    "id": 2,
+    "company": "AIA Philippines – Crizaldo Financial Associates ",
+    "position": "Intern – Graphic Designer/Digital Marketer",
+    "duration": "February 2022 – May 2022",
+    "description": [
+      "Aided the marketing team in creating graphic design and visual content for printed materials, banners, brochures, and calendars used for promoting the agency. Created graphics were used as promotional materials for digital marketing.",
+      "Utilized social media platforms and online office tools to promote the agency and encourage individuals to avail the products and services of the agency. Approximately 40 individuals were encouraged to attend the free webinar of the company."
+    ]
+  },
+  {
+    "category": "education",
+    "id": 1,
+    "school": "Cavite State University-Indang Campus",
+    "location": "Indang, Cavite",
+    "level": "Tertiary",
+    "degree": "Bachelor of Science in Information Technology",
+    "duration": "2018 - 2023",
+    "grade": 1.323
+  },
+
+  {
+    "category": "education",
+    "id": 2,
+    "school": "STI College Tagaytay",
+    "location": "Tagaytay City, Cavite",
+    "level": "Senior High School",
+    "degree": "TVL - ICT Computer Programming NC III - Java & .NET Technology",
+    "duration": "2016 - 2018",
+    "grade": 94
+  },
+
+  {
+    "category": "education",
+    "id": 3,
+    "school": "Academia de San Vicente Ferrer ",
+    "location": "Indang, Cavite",
+    "level": "Junior High School",
+    "degree": "General Education",
+    "duration": "2012 - 2016",
+    "grade": 94
+  },
+
+  {
+    "category": "certificate",
+    "id": 1,
+    "title": "Civil Service Professional Eligible",
+    "date": "August 2024",
+    "body": "Civil Service Comission"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "title": "Entrance Examination System with Chatbot Integration and SMS and Email Notification",
+    "technology": "Laravel, Vue.js, Tailwind CSS, Laravel BotMan, Twilio, SMTP",
+    "link": "https://github.com/dlxks/cvsu-ees.git",
+    "description": [
+      "Developed a dynamic web-based entrance exam platform for Cavite State University as academic requirement, using Laravel for the backend and Vue.js for reactive frontend components",
+      "Integrated Laravel BotMan chatbot to guide users through the application and examination process, answering FAQs in real-time",
+      "Implemented SMS alerts using Twilio and email notifications via SMTP, automating schedule updates, and exam results",
+      "Designed a modern, fully responsive UI using Tailwind CSS, ensuring a seamless experience across mobile and desktop devices",
+      "Key features included timed exams, randomized questions, real-time scoring, and admin dashboards for managing examinees and reports"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Student Information Management System",
+    "technology": "HTML, CSS, JavaScript, PHP, MySQL, Bootstrap",
+    "link": "https://github.com/dlxks/sims.git",
+    "description": [
+      "Built a web-based system to manage student records, including personal information, and guardian contacts",
+      "Implemented CRUD functionality (Create, Read, Update, Delete) for managing student profiles and admin accounts",
+      "Designed user-friendly interfaces using Bootstrap, enabling responsive and mobile-compatible layouts",
+      "Integrated form validation and server-side input sanitization for secure data entry",
+      "Developed features for admin login, student profile updates using alerts and modals"
+    ]
+  }
+]
