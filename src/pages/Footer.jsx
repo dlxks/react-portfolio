@@ -85,7 +85,7 @@ function Footer({ profile }) {
         </div>
         <div className="row">
           <p>
-            &copy;{new Date().getFullYear()} Tristan. Created using{' '}
+            &copy;{new Date().getFullYear()} {firstName}. Created using{' '}
             <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React JS</a>,{' '}
             <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap</a>, {' '}
             <a href="https://github.com/michalsnik/aos" target="_blank" rel="noopener noreferrer">

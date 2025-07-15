@@ -28,6 +28,7 @@ function ProjectList({ projects }) {
                   {project.title}
                 </a>
               </h4>
+              <h6>{project.technology}</h6>
               <ProjectDescription description={project.description} />
             </div>
           </div >

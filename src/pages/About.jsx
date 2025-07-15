@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import profilePic from '../assets/bg.jpg';
+import profilePic from '../assets/profile.jpg';
 
 function About({ profile }) {
   return (
@@ -17,14 +17,14 @@ function About({ profile }) {
 
             <div className="container" data-aos="fade-up" data-aos-delay="100">
               <div className="row gy-4 justify-content-center">
-                <div className="col-lg-4">
+                <div className="col-lg-3">
                   <img
                     src={profilePic}
                     className="img-fluid"
                     alt=""
                   />
                 </div>
-                <div className="col-lg-8 content" data-aos="fade-up" data-aos-delay="100">
+                <div className="col-lg-9 content" data-aos="fade-up" data-aos-delay="100">
                   <h2 className="about-title">Front-End Developer &amp; Web Developer.</h2>
                   <div className="row">
                     <div className="col-lg-6">
@@ -39,9 +39,10 @@ function About({ profile }) {
                           <strong>Phone:</strong>
                           <span>{profile.contact}</span>
                         </li>
-                        <li><Icon icon="bi:caret-right" width="16" height="16" />
-                          <strong>City:</strong>
-                          <span>{profile.address}</span>
+                        <li>
+                          <Icon icon="bi:caret-right" width="16" height="16" />
+                          <strong>Email:</strong>
+                          <span>{profile.email}</span>
                         </li>
                       </ul>
                     </div>
@@ -57,10 +58,9 @@ function About({ profile }) {
                           <strong>Degree:</strong>
                           <span>{profile.degree}</span>
                         </li>
-                        <li>
-                          <Icon icon="bi:caret-right" width="16" height="16" />
-                          <strong>Email:</strong>
-                          <span>{profile.email}</span>
+                        <li><Icon icon="bi:caret-right" width="16" height="16" />
+                          <strong>Address:</strong>
+                          <span>{profile.address}</span>
                         </li>
                       </ul>
                     </div>

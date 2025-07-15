@@ -6,9 +6,9 @@ function Home({ profile }) {
 
   const socialIcons = {
     facebook: "bi:facebook",
-    github: "bi:github",
-    linkedin: "bi:linkedin",
     instagram: "bi:instagram",
+    linkedin: "bi:linkedin",
+    github: "bi:github",
   };
 
   return (

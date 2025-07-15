@@ -24,5 +24,17 @@
       "Integrated form validation and server-side input sanitization for secure data entry",
       "Developed features for admin login, student profile updates using alerts and modals"
     ]
+  },
+  {
+    "id": 3,
+    "title": "Portfolio Created using React JS",
+    "technology": "React JS, Bootstrap, Animate-on-Scroll, Iconify",
+    "link": "https://github.com/dlxks/react-portfolio.git",
+    "description": [
+      "Developed a responsive profile application using React JS for dynamic UI rendering.",
+      "Styled with Bootstrap for a clean, mobile-first layout",
+      "Integrated Iconify to provide scalable, customizable icons",
+      "Implemented Animate on Scroll (AOS) for smooth, engaging scroll-based animations"
+    ]
   }
 ]
