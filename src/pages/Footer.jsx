@@ -39,11 +39,11 @@ function Footer({ profile }) {
     <footer className="bg-dark text-white py-3">
       <div className="container">
         <div className="row g-md-5 my-5">
-          <div className="col-md-4 footer-section" data-aos="fade-up" >
+          <div className="col-md-4 footer-section" data-aos="fade-up">
             <h3>{firstName}.</h3>
             <p>Find me on social media:</p>
 
-            <div className='socials' data-aos="fade-up">
+            <div className='socials' >
               {Object.entries(socialIcons).map(([key, icon]) => {
                 const url = profile[key];
                 if (!url) return null;
@@ -83,7 +83,7 @@ function Footer({ profile }) {
             </h3>
           </div>
         </div>
-        <div className="row" data-aos="fade-up">
+        <div className="row">
           <p>
             &copy;{new Date().getFullYear()} {firstName}. Created using{' '}
             <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React JS</a>,{' '}
