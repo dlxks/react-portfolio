@@ -11,6 +11,8 @@ function Home({ profile }) {
     github: "bi:github",
   };
 
+  const firstName = profile.name.split(' ')[0];
+
   return (
     <Container
       fluid="md"
@@ -19,9 +21,16 @@ function Home({ profile }) {
       data-aos-duration="600"
     >
       <div className="contents">
-        <h1 className="home-name h1">{profile.name}</h1>
-
-        <div className="socials" data-aos="fade" data-aos-delay="100">
+        <h1
+          className="home-name h1 letters"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          {firstName.split('').map((char, index) => (
+            <p key={index} style={{ '--1': index }}>{char === ' ' ? '\u00A0' : char}</p>
+          ))}
+        </h1>
+        <div className="socials" data-aos="fade-up" data-aos-delay="200">
           {Object.entries(socialIcons).map(([key, icon]) => {
             const url = profile[key];
             if (!url) return null;
@@ -41,7 +50,7 @@ function Home({ profile }) {
           })}
         </div>
       </div>
-    </Container>
+    </Container >
   );
 }
 

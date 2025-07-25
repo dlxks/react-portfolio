@@ -1,3 +1,16 @@
+:root {
+  --default-font: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+  --default-color: #0042bd;
+  --dark-color: #001233;
+  --hover-color: #426fc4;
+  --default-background: #fcfcfc;
+  --even-color: #eefcff;
+  scroll-behavior: smooth;
+}
+
+
 /* Page background */
 body {
   background-color: #f8f9fa;
@@ -23,6 +36,19 @@ body {
   z-index: 1000;
 }
 
+.nav-button.hide {
+  opacity: 0.2;
+}
+
+.nav-button.hide:hover {
+  opacity: 1;
+}
+
+.nav-button.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @media only screen and (max-width: 768px) {
   .nav-button {
     margin: 10px 0 0 15px;
@@ -30,9 +56,10 @@ body {
 }
 
 .nav-button:hover {
-  background-color: rgb(65, 65, 65);
-  color: rgb(226, 226, 226);
-  box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+  background-color: #e2e2e2;
+  color: var(--dark-color);
+  filter: drop-shadow(0px 4px 10px rgba(255, 255, 255, 0.1));
 }
 
 /* Offcanvas nav links */
@@ -54,9 +81,24 @@ body {
   text-decoration: none;
 }
 
+.offcanvas-body .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--hover-color);
+  transition: width 0.3s ease;
+}
+
+.offcanvas-body .nav-link:hover::after {
+  width: 30%;
+}
+
 /* Highlight active section */
 .offcanvas-body .nav-link.active {
-  color: #0077ff;
+  color: var(--default-color);
   font-weight: 600;
 }
 

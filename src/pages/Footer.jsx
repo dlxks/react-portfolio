@@ -39,11 +39,11 @@ function Footer({ profile }) {
     <footer className="bg-dark text-white py-3">
       <div className="container">
         <div className="row g-md-5 my-5">
-          <div className="col-md-4">
+          <div className="col-md-4 footer-section" data-aos="fade-up" >
             <h3>{firstName}.</h3>
             <p>Find me on social media:</p>
 
-            <div className='socials'>
+            <div className='socials' data-aos="fade-up">
               {Object.entries(socialIcons).map(([key, icon]) => {
                 const url = profile[key];
                 if (!url) return null;
@@ -63,7 +63,7 @@ function Footer({ profile }) {
               })}
             </div>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 footer-section" data-aos="fade-up">
             {sectionIds.map((id) => (
               <Nav.Link
                 key={id}
@@ -74,16 +74,16 @@ function Footer({ profile }) {
               </Nav.Link>
             ))}
           </div>
-          <div className="col-md-5">
+          <div className="col-md-5 footer-section" data-aos="fade-up">
             <p>
               Seeking new career challenges and opportunities. Let’s start a conversation!
             </p>
             <h3>
-              <a href="mailto:dlxks.sangangbayan@gmail.com" class="text-white text-decoration-none">dlxks.sangangbayan@gmail.com</a>
+              <a href="mailto:dlxks.sangangbayan@gmail.com" className="text-white text-decoration-none">dlxks.sangangbayan@gmail.com</a>
             </h3>
           </div>
         </div>
-        <div className="row">
+        <div className="row" data-aos="fade-up">
           <p>
             &copy;{new Date().getFullYear()} {firstName}. Created using{' '}
             <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React JS</a>,{' '}

@@ -25,7 +25,7 @@ function Resume({ resume }) {
                   </div>
 
                   <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <h2 className="resume-title">Education</h2>
+                    <h2 className="resume-title" data-aos="fade-up">Education</h2>
                     <EducationItemList educationItems={educationItems} />
 
                     <h2 className="resume-title">Certifications</h2>

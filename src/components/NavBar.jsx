@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 import { Nav, Offcanvas } from 'react-bootstrap';
 import useActiveSection from '../hooks/useActiveSection';
 
-function NavBar({ show, handleClose }) {
+function NavBar({ show, handleClose }, ref) {
   const sectionIds = ['home', 'about', 'resume', 'projects'];
   const activeSection = useActiveSection(sectionIds);
 
@@ -15,7 +15,13 @@ function NavBar({ show, handleClose }) {
   };
 
   return (
-    <Offcanvas show={show} onHide={handleClose} placement="start" scroll={true} backdrop={true}>
+    <Offcanvas
+      show={show}
+      onHide={handleClose}
+      placement="start"
+      scroll={true}
+      backdrop={true}
+    >
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>Menu</Offcanvas.Title>
       </Offcanvas.Header>

@@ -5,6 +5,7 @@
   --heading-font: "Raleway", sans-serif;
   --nav-font: "Poppins", sans-serif;
   --default-color: #0042bd;
+  --dark-color: #001233;
   --hover-color: #426fc4;
   --default-background: #fcfcfc;
   --even-color: #eefcff;
@@ -33,7 +34,7 @@ body {
   padding: 0;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease;
+  transition: all 0.3s ease-in-out;
   z-index: 1000;
   box-shadow: none;
   display: flex;
@@ -100,6 +101,47 @@ section {
 
 #home .socials {
   padding: 2rem 0;
+}
+
+.socials a svg {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socials a:hover svg {
+  transform: scale(1.2) rotate(10deg);
+  color: #1da1f2;
+  cursor: pointer;
+}
+
+.letters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.letters p {
+  text-align: center;
+  margin-right: 1.5px;
+  border-radius: 15%;
+  font-size: 60px;
+  font-weight: 900;
+  letter-spacing: 10px;
+  transition: all 1s ease;
+}
+
+.letters:hover p:nth-child(even) {
+  letter-spacing: 20px;
+  text-shadow: 0 0 5px #ffffff;
+  transform: translate(0, 0, 100px);
+  transition: 1s;
+}
+
+.letters:hover p:nth-child(odd) {
+  letter-spacing: 20px;
+  text-shadow: 0 0 5px #ffffff;
+  transform: translate(0, 0, 100px);
+  transition: 1.5s;
 }
 
 /* ABOUT SECTION */
@@ -253,6 +295,10 @@ section {
 #footer {
   margin: 0;
   padding: 0;
+}
+
+.footer-section {
+  margin-bottom: 20px;
 }
 
 /* ANIMATIONS */
