@@ -4,7 +4,7 @@ import { Nav, Offcanvas } from 'react-bootstrap';
 import useActiveSection from '../hooks/useActiveSection';
 
 function NavBar({ show, handleClose }, ref) {
-  const sectionIds = ['home', 'about', 'resume', 'projects'];
+  const sectionIds = ['home', 'about', 'resume', 'certificates', 'projects'];
   const activeSection = useActiveSection(sectionIds);
 
   const scrollToSection = (id) => {
@@ -33,7 +33,7 @@ function NavBar({ show, handleClose }, ref) {
               className={`d-flex align-items-center ${activeSection === id ? 'active' : ''}`}
               onClick={() => scrollToSection(id)}
             >
-              <Icon icon={iconMap[id]} width="20" height="20" style={{ color: '#666' }} />
+              <Icon icon={iconMap[id]} width="20" height="20" />
               {id.charAt(0).toUpperCase() + id.slice(1)}
             </Nav.Link>
           ))}
@@ -47,6 +47,7 @@ const iconMap = {
   home: 'bi:house',
   about: 'bi:person',
   resume: 'bi:file-earmark-text',
+  certificates: 'bi:award',
   projects: 'bi:folder',
 };
 
