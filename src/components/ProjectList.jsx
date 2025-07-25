@@ -13,7 +13,7 @@ function ProjectList({ projects }) {
             key={index}
             className={`col-lg-6 d-flex project-item ${index % 2 === 1 ? 'even' : 'odd'}`}
             data-aos="fade-up"
-            data-aos-delay={index % 2 === 1 ? '200' : '100'}
+            data-aos-delay={Math.floor(Math.random() * 3) * 100}
           >
             <div className="icon flex-shrink-0">
               <Icon icon="bi:github" className="item-icon" />

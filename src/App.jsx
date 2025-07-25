@@ -5,6 +5,7 @@ import NavbarContainer from './components/NavbarContainer.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Resume from './pages/Resume.jsx';
+import Certificates from './pages/Certificates.jsx';
 import Projects from './pages/Projects.jsx';
 import Footer from './pages/Footer.jsx';
 import { Icon } from "@iconify/react";
@@ -47,6 +48,7 @@ function App() {
       <section id='home'><Home profile={profile} /></section>
       <section id='about'><About profile={profile} /></section>
       <section id='resume'><Resume resume={resume} /></section>
+      <section id='certificates'><Certificates /></section>
       <section id='projects'><Projects projects={projects} /></section>
       <section id='footer'><Footer profile={profile} /></section>
 

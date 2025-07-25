@@ -25,7 +25,7 @@ function Footer({ profile }) {
     github: "bi:github",
   };
 
-  const sectionIds = ['home', 'about', 'resume', 'projects'];
+  const sectionIds = ['home', 'about', 'resume', 'certificates', 'projects'];
   const activeSection = useActiveSection(sectionIds);
 
   const scrollToSection = (id) => {
