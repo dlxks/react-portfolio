@@ -37,7 +37,6 @@ function CertificationItemList({ certificationItems }) {
               {/* Bubble on hover  */}
               < div className="hover_color_bubble" ></div>
             </div >
-
           ))
         }
       </div >

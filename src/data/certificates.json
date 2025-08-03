@@ -8,41 +8,49 @@
   },
   {
     "id": 2,
+    "title": "Meta React",
+    "date": "July 25, 2025",
+    "provider": "Meta - Coursera",
+    "file_url": "/certificates/meta_react.pdf"
+  },
+
+  {
+    "id": 3,
     "title": "Adobe Photoshop Basic Workflow",
     "date": "March 11, 2022",
     "provider": "Department of Information and Communications Technology",
     "file_url": "/certificates/adobe_photoshop_basic_workflow.pdf"
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "Maximizing the Basics of Programming: Decision, Loops, and the CRUD",
     "date": "March 23, 2022",
     "provider": "Department of Information and Communications Technology",
     "file_url": "/certificates/maximizing_the_basics_of_programming.pdf"
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "How to Create a Simple Style Guide for Design-Development Hand-Off",
     "date": "April 20, 2022",
     "provider": "StackLeague x GDG Cagayan de Oro",
     "file_url": "/certificates/how_to_create_a_simple_style_guide.pdf"
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Information Security Awareness Training",
     "date": "March 30, 2022",
     "provider": "Department of Information and Communications Technology",
     "file_url": "/certificates/information_security_awareness_training.pdf"
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "Learning Web Development, Top-Down",
     "date": "March 16, 2022",
     "provider": "StackLeague x PWA Pilipinas",
     "file_url": "/certificates/tech_session_learning_web_development.pdf"
   },
   {
-    "id": 7,
+    "id": 8,
     "title": "Netiquettes: Code of Good Behavior",
     "date": "April 8, 2022",
     "provider": "Department of Information and Communications Technology",
@@ -56,28 +64,28 @@
     "file_url": "/certificates/roadmap_to_senior_programmer.pdf"
   },
   {
-    "id": 9,
+    "id": 10,
     "title": "The Rise of Intelligent Automation",
     "date": "April 13, 2022",
     "provider": "StackLeague x Phil IT Org Tech",
     "file_url": "/certificates/the_rise_of_intelligent_automation.pdf"
   },
   {
-    "id": 10,
+    "id": 11,
     "title": "Building a Minimum Viable Product",
     "date": "March 23, 2022",
     "provider": "StackLeague x BYTE ADMU",
     "file_url": "/certificates/building_a_minimum_viable_product.pdf"
   },
   {
-    "id": 11,
+    "id": 12,
     "title": "Web Accessibility Done Right - Common Design Gaps and How to Fix Them",
     "date": "May 25, 2022",
     "provider": "StackLeague x UXPH Tech Session",
     "file_url": "/certificates/web_accessibility_done_right.pdf"
   },
   {
-    "id": 12,
+    "id": 13,
     "title": "Web Development Using WordPress",
     "date": "March 18, 2022",
     "provider": "Department of Information and Communications Technology",

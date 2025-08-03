@@ -36,5 +36,19 @@
       "Integrated Iconify to provide scalable, customizable icons",
       "Implemented Animate on Scroll (AOS) for smooth, engaging scroll-based animations"
     ]
+  },
+  {
+    "id": 4,
+    "title": "Little Lemon Website",
+    "technology": "React JS, Next JS Tailwind CSS",
+    "link": "https://github.com/dlxks/little-lemon.git",
+    "description": [
+      "Capstone project for the Meta Front-End Developer certification",
+      "Built using React.js, Next.js 13 App Router, and Tailwind CSS for modern performance and responsiveness",
+      "Implements a responsive landing page, booking system, and menu interface with dynamic content loading",
+      "Utilizes Context API and useReducer for global state management (e.g., booking form, cart system)",
+      "Includes features like localStorage persistence, toast notifications, modal popups, and category filters",
+      "Incorporates third-party libraries such as Iconify for icons and Framer Motion for animations"
+    ]
   }
 ]

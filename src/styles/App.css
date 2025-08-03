@@ -257,7 +257,8 @@ section {
 }
 
 .certification-item {
-  flex: 1 1 calc(33.333% - 20px);
+  flex: 0 0 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
   background: var(--default-background);
   position: relative;
   padding: 20px;
@@ -265,7 +266,14 @@ section {
   border-radius: 12px;
   transition: all 0.5s ease !important;
   overflow: hidden;
-  align-self: center;
+  align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+  .certification-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 .certification-item:hover {
