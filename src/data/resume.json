@@ -2,6 +2,30 @@
   {
     "category": "experience",
     "id": 1,
+    "company": "Freelance",
+    "position": "Web Developer / Front-End Developer",
+    "duration": "January 2025 – Present",
+    "description": [
+      "Designed and developed a web-based parish transaction and reservation system using PHP, MySQL, HTML, CSS, and JavaScript to manage event bookings, payments, and records.",
+      "Implemented responsive, mobile-friendly layouts ensuring consistent performance across devices.",
+      "Optimized PHP scripts and MySQL queries, improving load times and system performance."
+    ]
+  },
+  {
+    "category": "experience",
+    "id": 2,
+    "company": "Freelance",
+    "position": "Graphic Designer",
+    "duration": "January 2023 – present",
+    "description": [
+      "Created custom wedding and birthday invitations, logos, and marketing graphics for small businesses, including a milk tea store.",
+      "Designed banners and tarpaulins for events and promotions, ensuring print-ready quality.",
+      "Delivered visually compelling work using Adobe Photoshop, and Adobe InDesign, meeting tight client deadlines."
+    ]
+  },
+  {
+    "category": "experience",
+    "id": 3,
     "company": "Schneider Electric",
     "position": "Order Entry Administrator",
     "duration": "June 2023 – April 2025",
@@ -14,7 +38,7 @@
   },
   {
     "category": "experience",
-    "id": 2,
+    "id": 4,
     "company": "AIA Philippines – Crizaldo Financial Associates ",
     "position": "Intern – Graphic Designer/Digital Marketer",
     "duration": "February 2022 – May 2022",

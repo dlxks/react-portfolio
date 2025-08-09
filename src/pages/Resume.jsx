@@ -19,18 +19,21 @@ function Resume({ resume }) {
                 Adaptable IT graduate with experience in order processing, system support, and digital marketing. Skilled in SAP S/4HANA, workflow automation, and cross-functional collaboration. Certified in programming and information security, with a strong focus on continuous learning and process improvement.
               </p>
 
-              <div className="container" data-aos="fade-up" data-aos-delay="100">
-                <div className="row">
-                  <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <h2 className="resume-title">Experience</h2>
-                    <ExperienceItemList experienceItems={experienceItems} />
-                  </div>
+              <div className="container">
+                {/* Experience Section */}
+                <h2 className="resume-title">Experience</h2>
+                <div className="row gy-4" data-aos="fade-up" data-aos-delay="100">
+                  {experienceItems.map((item) => (
+                    <ExperienceItemList item={item} key={item.id} />
+                  ))}
+                </div>
 
-                  <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <h2 className="resume-title" data-aos="fade-up">Education</h2>
-                    <EducationItemList educationItems={educationItems} />
-
-                  </div>
+                {/* Education Section */}
+                <h2 className="resume-title" data-aos="fade-up">Education</h2>
+                <div className="row gy-4" data-aos="fade-up" data-aos-delay="100">
+                  {educationItems.map((item) => (
+                    <EducationItemList item={item} key={item.id} />
+                  ))}
                 </div>
               </div>
             </div>

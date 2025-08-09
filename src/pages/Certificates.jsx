@@ -12,7 +12,7 @@ const Certificates = () => {
         <div className="contents">
           <section id="certificates" className="certificates-section">
             <div className="container section-title" data-aos="fade-up">
-              <h2>Certificates</h2>
+              <h2>Certificates & Trainings</h2>
               <p data-aos="fade-up" data-aos-delay="200">
                 I have received several certificates recognizing my successful completion of various courses and training programs. These certificates validate my skills, knowledge, and commitment to continuous learning in my professional and technical fields. Each certification reflects my dedication to improving and staying updated in my areas of expertise.
               </p>

@@ -1,19 +1,15 @@
 import ExperienceItemDescription from "./ExperienceItemDescription";
 
-function ExperienceItemList({ experienceItems }) {
+function ExperienceItemList({ item }) {
   return (
     <>
-      {
-        experienceItems.map(
-          (item) => (
-            <div key={item.id} className="resume-item">
-              <h4 className="item-title">{item.position}</h4>
-              <h5>{item.company} | {item.duration}</h5>
-              <ExperienceItemDescription description={item.description} />
-            </div>
-          )
-        )
-      }
+      <div
+        className="resume-item col-lg-6"
+        data-aos="fade-up" data-aos-delay="100">
+        <h4 className="item-title">{item.position}</h4>
+        <h5>{item.company} | {item.duration}</h5>
+        <ExperienceItemDescription description={item.description} />
+      </div>
     </>
   )
 }
