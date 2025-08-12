@@ -1,90 +1,82 @@
 [
   {
     "id": 1,
-    "title": "Entrance Examination System with Chatbot Integration and SMS and Email Notification",
-    "technology": "Laravel, Vue.js, Tailwind CSS, Laravel BotMan, Twilio, SMTP",
+    "title": "CVSU Entrance Exam System",
+    "technology": "Laravel, Vue.js, Tailwind CSS, BotMan, Twilio",
     "link": "https://github.com/dlxks/cvsu-ees.git",
     "description": [
-      "Developed a dynamic web-based entrance exam platform for Cavite State University as academic requirement, using Laravel for the backend and Vue.js for reactive frontend components",
-      "Integrated Laravel BotMan chatbot to guide users through the application and examination process, answering FAQs in real-time",
-      "Implemented SMS alerts using Twilio and email notifications via SMTP, automating schedule updates, and exam results",
-      "Designed a modern, fully responsive UI using Tailwind CSS, ensuring a seamless experience across mobile and desktop devices",
-      "Key features included timed exams, randomized questions, real-time scoring, and admin dashboards for managing examinees and reports"
+      "Dynamic web-based entrance exam platform for Cavite State University",
+      "Integrated chatbot for user guidance and real-time FAQ support",
+      "Automated SMS/email notifications via Twilio and SMTP",
+      "Responsive UI with timed exams, randomized questions, and real-time scoring"
     ]
   },
   {
     "id": 2,
-    "title": "Student Information Management System",
-    "technology": "HTML, CSS, JavaScript, PHP, MySQL, Bootstrap",
+    "title": "Student Management System",
+    "technology": "PHP, MySQL, Bootstrap, JavaScript",
     "link": "https://github.com/dlxks/sims.git",
     "description": [
-      "Built a web-based system to manage student records, including personal information, and guardian contacts",
-      "Implemented CRUD functionality (Create, Read, Update, Delete) for managing student profiles and admin accounts",
-      "Designed user-friendly interfaces using Bootstrap, enabling responsive and mobile-compatible layouts",
-      "Integrated form validation and server-side input sanitization for secure data entry",
-      "Developed features for admin login, student profile updates using alerts and modals"
+      "Web-based student records management system",
+      "Full CRUD functionality for student profiles and admin accounts",
+      "Responsive Bootstrap interface with form validation",
+      "Secure data entry with server-side sanitization"
     ]
   },
   {
     "id": 3,
-    "title": "Portfolio Created using React JS",
-    "technology": "React JS, Bootstrap, Animate-on-Scroll, Iconify",
+    "title": "React Portfolio",
+    "technology": "React, Bootstrap, AOS, Iconify",
     "link": "https://github.com/dlxks/react-portfolio.git",
     "description": [
-      "Developed a responsive profile application using React JS for dynamic UI rendering.",
-      "Styled with Bootstrap for a clean, mobile-first layout",
-      "Integrated Iconify to provide scalable, customizable icons",
-      "Implemented Animate on Scroll (AOS) for smooth, engaging scroll-based animations"
+      "Responsive portfolio application with React",
+      "Modern UI with Bootstrap and smooth AOS animations",
+      "Scalable icons via Iconify integration"
     ]
   },
   {
     "id": 4,
-    "title": "Little Lemon Website",
-    "technology": "React JS, Next JS Tailwind CSS",
+    "title": "Little Lemon Restaurant",
+    "technology": "React, Next.js, Tailwind CSS",
     "link": "https://github.com/dlxks/little-lemon.git",
     "description": [
-      "Capstone project for the Meta Front-End Developer certification",
-      "Built using React.js, Next.js 13 App Router, and Tailwind CSS for modern performance and responsiveness",
-      "Implements a responsive landing page, booking system, and menu interface with dynamic content loading",
-      "Utilizes Context API and useReducer for global state management (e.g., booking form, cart system)",
-      "Includes features like localStorage persistence, toast notifications, modal popups, and category filters",
-      "Incorporates third-party libraries such as Iconify for icons and Framer Motion for animations"
+      "Restaurant website with booking system and menu interface",
+      "Next.js 13 App Router with responsive Tailwind CSS design",
+      "State management with Context API and localStorage persistence",
+      "Interactive features with toast notifications and modal popups"
     ]
   },
   {
     "id": 5,
-    "title": "Memeify - Meme Generator",
-    "technology": "React JS, CSS, HTML",
+    "title": "Meme Generator",
+    "technology": "React, CSS, HTML",
     "link": "https://github.com/dlxks/memeify.git",
     "description": [
-      "Interactive meme generator application built with React",
-      "Allows users to create custom memes with text overlays on popular meme templates",
-      "Features drag-and-drop functionality for image uploads and real-time text preview",
-      "Responsive design ensures compatibility across desktop and mobile devices"
+      "Interactive meme creator with text overlay functionality",
+      "Drag-and-drop image uploads with real-time preview",
+      "Responsive design for desktop and mobile"
     ]
   },
   {
     "id": 6,
-    "title": "Yummify - Recipe Finder",
-    "technology": "React JS, API Integration, CSS",
+    "title": "Recipe Finder",
+    "technology": "React, REST API, CSS",
     "link": "https://github.com/dlxks/yummify.git",
     "description": [
-      "Recipe discovery application that helps users find recipes based on available ingredients",
-      "Integrates with external recipe APIs to provide comprehensive recipe database",
-      "Features search functionality, dietary filters, and step-by-step cooking instructions",
-      "Clean and intuitive interface designed for easy navigation and recipe management"
+      "Recipe discovery app with ingredient-based search",
+      "External API integration for comprehensive recipe database",
+      "Dietary filters and step-by-step cooking instructions"
     ]
   },
   {
     "id": 7,
-    "title": "Tenzies - Dice Game",
-    "technology": "React JS, CSS, JavaScript",
+    "title": "Tenzies Dice Game",
+    "technology": "React, CSS, JavaScript",
     "link": "https://github.com/dlxks/tenzies.git",
     "description": [
-      "Interactive dice game implementation based on the popular Tenzies game",
-      "Features real-time dice rolling, score tracking, and win condition detection",
-      "Includes animations for dice rolling and selection states",
-      "Responsive design optimized for both desktop and mobile gameplay"
+      "Interactive dice game with real-time rolling and scoring",
+      "Smooth animations and responsive mobile design",
+      "Win condition detection and score tracking"
     ]
   }
 ]
