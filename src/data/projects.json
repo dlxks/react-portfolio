@@ -50,5 +50,41 @@
       "Includes features like localStorage persistence, toast notifications, modal popups, and category filters",
       "Incorporates third-party libraries such as Iconify for icons and Framer Motion for animations"
     ]
+  },
+  {
+    "id": 5,
+    "title": "Memeify - Meme Generator",
+    "technology": "React JS, CSS, HTML",
+    "link": "https://github.com/dlxks/memeify.git",
+    "description": [
+      "Interactive meme generator application built with React",
+      "Allows users to create custom memes with text overlays on popular meme templates",
+      "Features drag-and-drop functionality for image uploads and real-time text preview",
+      "Responsive design ensures compatibility across desktop and mobile devices"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Yummify - Recipe Finder",
+    "technology": "React JS, API Integration, CSS",
+    "link": "https://github.com/dlxks/yummify.git",
+    "description": [
+      "Recipe discovery application that helps users find recipes based on available ingredients",
+      "Integrates with external recipe APIs to provide comprehensive recipe database",
+      "Features search functionality, dietary filters, and step-by-step cooking instructions",
+      "Clean and intuitive interface designed for easy navigation and recipe management"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Tenzies - Dice Game",
+    "technology": "React JS, CSS, JavaScript",
+    "link": "https://github.com/dlxks/tenzies.git",
+    "description": [
+      "Interactive dice game implementation based on the popular Tenzies game",
+      "Features real-time dice rolling, score tracking, and win condition detection",
+      "Includes animations for dice rolling and selection states",
+      "Responsive design optimized for both desktop and mobile gameplay"
+    ]
   }
 ]
