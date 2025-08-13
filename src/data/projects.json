@@ -78,5 +78,16 @@
       "Smooth animations and responsive mobile design",
       "Win condition detection and score tracking"
     ]
+  },
+  {
+    "id": 8,
+    "title": "Code Rescue: Word Quest",
+    "technology": "React, CSS, JavaScript",
+    "link": "https://github.com/dlxks/code-rescue-wordquest.git",
+    "description": [
+      "Interactive word puzzle game with coding theme",
+      "Engaging gameplay mechanics with progressive difficulty",
+      "Clean and responsive user interface design"
+    ]
   }
 ]
