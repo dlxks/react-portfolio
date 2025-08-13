@@ -82,7 +82,7 @@
   {
     "id": 8,
     "title": "Code Rescue: Word Quest",
-    "technology": "React, CSS, JavaScript",
+    "technology": "Next JS, React, CSS, JavaScript",
     "link": "https://github.com/dlxks/code-rescue-wordquest.git",
     "description": [
       "Interactive word puzzle game with coding theme",
