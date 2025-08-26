@@ -16,7 +16,13 @@ function ProjectList({ projects }) {
             data-aos-delay={Math.floor(Math.random() * 3) * 100}
           >
             <div className="icon flex-shrink-0">
-              <Icon icon="bi:github" className="item-icon" />
+              <a
+                href={getFullUrl(project.link)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon icon="bi:github" className="item-icon" />
+              </a>
             </div>
             <div>
               <h4 className="title" key={index}>

@@ -5,22 +5,20 @@
     "technology": "Laravel, Vue.js, Tailwind CSS, BotMan, Twilio",
     "link": "https://github.com/dlxks/cvsu-ees.git",
     "description": [
-      "Dynamic web-based entrance exam platform for Cavite State University",
-      "Integrated chatbot for user guidance and real-time FAQ support",
-      "Automated SMS/email notifications via Twilio and SMTP",
-      "Responsive UI with timed exams, randomized questions, and real-time scoring"
+      "Prototype entrance exam platform developed for Cavite State University to digitize exam administration",
+      "Integrated a basic chatbot using BotMan and Twilio for guidance, FAQs, and automated student assistance",
+      "Fullstack web application built with Laravel (backend) and Vue.js (frontend), styled with Tailwind CSS"
     ]
   },
   {
     "id": 2,
     "title": "Student Management System",
-    "technology": "PHP, MySQL, Bootstrap, JavaScript",
+    "technology": "HTML, CSS, JavaScript, PHP, MySQL",
     "link": "https://github.com/dlxks/sims.git",
     "description": [
-      "Web-based student records management system",
-      "Full CRUD functionality for student profiles and admin accounts",
-      "Responsive Bootstrap interface with form validation",
-      "Secure data entry with server-side sanitization"
+      "Web-based platform designed for managing student records and school-related data",
+      "Supports CRUD operations for student profiles including enrollment, grades, and personal details",
+      "Responsive front-end built with Bootstrap, with backend integration in PHP and MySQL database"
     ]
   },
   {
@@ -29,9 +27,9 @@
     "technology": "React, Bootstrap, AOS, Iconify",
     "link": "https://github.com/dlxks/react-portfolio.git",
     "description": [
-      "Responsive portfolio application with React",
-      "Modern UI with Bootstrap and smooth AOS animations",
-      "Scalable icons via Iconify integration"
+      "Responsive personal portfolio showcasing projects, skills, and experiences",
+      "Implemented smooth scroll animations using AOS for a dynamic user experience",
+      "Custom icon sets integrated with Iconify and styled with Bootstrap for modern design consistency"
     ]
   },
   {
@@ -40,32 +38,32 @@
     "technology": "React, Next.js, Tailwind CSS",
     "link": "https://github.com/dlxks/little-lemon.git",
     "description": [
-      "Restaurant website with booking system and menu interface",
-      "Next.js 13 App Router with responsive Tailwind CSS design",
-      "State management with Context API and localStorage persistence",
-      "Interactive features with toast notifications and modal popups"
+      "Restaurant-themed web application with features for table reservation, menu browsing, and booking management",
+      "Developed using Next.js 13 App Router for optimized routing and scalability",
+      "State management handled via Context API for persistent user sessions and cart functionality",
+      "Enhanced user experience with interactive UI components such as modals and toast notifications"
     ]
   },
   {
     "id": 5,
-    "title": "Meme Generator",
+    "title": "Memeify",
     "technology": "React, CSS, HTML",
     "link": "https://github.com/dlxks/memeify.git",
     "description": [
-      "Interactive meme creator with text overlay functionality",
-      "Drag-and-drop image uploads with real-time preview",
-      "Responsive design for desktop and mobile"
+      "Lightweight meme generator enabling users to create, edit, and share custom memes instantly",
+      "Supports drag-and-drop image uploads with live preview functionality",
+      "Designed with a responsive layout ensuring seamless use across desktop and mobile devices"
     ]
   },
   {
     "id": 6,
-    "title": "Recipe Finder",
+    "title": "Yummify",
     "technology": "React, REST API, CSS",
     "link": "https://github.com/dlxks/yummify.git",
     "description": [
-      "Recipe discovery app with ingredient-based search",
-      "External API integration for comprehensive recipe database",
-      "Dietary filters and step-by-step cooking instructions"
+      "Recipe discovery application powered by REST API integration for real-time data",
+      "Allows users to search recipes by ingredients, categories, or cuisine preferences",
+      "Features step-by-step cooking instructions with a clean and intuitive user interface"
     ]
   },
   {
@@ -74,20 +72,47 @@
     "technology": "React, CSS, JavaScript",
     "link": "https://github.com/dlxks/tenzies.git",
     "description": [
-      "Interactive dice game with real-time rolling and scoring",
-      "Smooth animations and responsive mobile design",
-      "Win condition detection and score tracking"
+      "Interactive dice game where players roll dice until all match a target number",
+      "Includes win condition tracking, score recording, and game reset functionality",
+      "Playful and responsive UI design with smooth animations for an engaging user experience"
     ]
   },
   {
     "id": 8,
     "title": "Code Rescue: Word Quest",
     "technology": "React, CSS, JavaScript",
-    "link": "https://github.com/dlxks/code-rescue-wordquest.git",
+    "link": "https://github.com/dlxks/wordquest.git",
     "description": [
-      "Interactive word puzzle game with coding theme",
-      "Engaging gameplay mechanics with progressive difficulty",
-      "Clean and responsive user interface design"
+      "Educational word puzzle game with a coding-inspired rescue mission theme",
+      "Progressive levels of difficulty to challenge players’ problem-solving and vocabulary",
+      "Clean and responsive UI design optimized for both desktop and mobile play"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "VanLife - Van Rental Platform",
+    "technology": "React, TypeScript, Vite, Tailwind CSS",
+    "link": "https://github.com/dlxks/vanlife.git",
+    "description": [
+      "Front-end design van rental platform designed for both travelers and van hosts",
+      "Advanced filtering and sorting options by van type (Simple, Rugged, Luxury) with dynamic UI updates",
+      "Host dashboard to manage van listings, availability, and customer reviews",
+      "Implemented simple secure authentication with protected routes and role-based access",
+      "Mobile-first approach using Tailwind CSS with scalable front-end architecture powered by Vite and TypeScript"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Marci Metzger Landing Page",
+    "technology": "Next.js, Tailwind CSS",
+    "link": "https://github.com/dlxks/marci-metzger.git",
+    "description": [
+      "Modern landing page redesign for Marci Metzger’s real estate services",
+      "Responsive Next.js application showcasing property listings and services",
+      "Hero and About sections with engaging CTAs and detailed service info",
+      "Property highlights, gallery, and search functionality for easy browsing",
+      "Contact form and interactive map for seamless customer engagement",
+      "Deployed on Vercel with performance-optimized Next.js features"
     ]
   }
 ]
