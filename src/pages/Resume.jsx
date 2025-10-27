@@ -19,7 +19,7 @@ function Resume({ resume }) {
                 Detail-oriented and adaptable Web Developer with hands-on experience in building responsive, user-focused applications and enhancing system performance. Combines technical expertise with creativity through a background in graphic design, and leverages transferable strengths in system optimization, process improvement, and cross-functional collaboration. Dedicated to delivering scalable, high-quality solutions while continuously advancing technical knowledge.
               </p>
 
-              <p className="flex items-center">
+              <p className="flex items-center" data-aos="fade-up" data-aos-delay="100">
                 <a
                   href="/resume/sangangbayan_tristan_resume.pdf"
                   target="_blank"
