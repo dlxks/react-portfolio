@@ -14,6 +14,7 @@ function Footer({ profile }) {
     return ''
   }
   const firstName = getFirstWord(profile.name)
+  const email = profile.email
 
   // Social media lists
   const getFullUrl = (url) => (url?.startsWith("http") ? url : `https://${url}`);
@@ -79,7 +80,7 @@ function Footer({ profile }) {
               Seeking new career challenges and opportunities. Let’s start a conversation!
             </p>
             <h3>
-              <a href="mailto:dlxks.sangangbayan@gmail.com" className="text-white text-decoration-none">dlxks.sangangbayan@gmail.com</a>
+              <a href="mailto:dlxks.sangangbayan@gmail.com" className="text-white text-decoration-none">{email}</a>
             </h3>
           </div>
         </div>

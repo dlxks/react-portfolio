@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
-import { Icon } from "@iconify/react/dist/iconify.js";
 import ExperienceItemList from "../components/ExperienceItemList";
 import EducationItemList from "../components/EducationItemList";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 function Resume({ resume }) {
   const experienceItems = resume.filter(item => item.category === "experience") || []
@@ -16,7 +16,17 @@ function Resume({ resume }) {
             <div className="container section-title" data-aos="fade-up">
               <h2>Resume</h2>
               <p data-aos="fade-up" data-aos-delay="200">
-                Adaptable IT graduate with experience in order processing, system support, and digital marketing. Skilled in SAP S/4HANA, workflow automation, and cross-functional collaboration. Certified in programming and information security, with a strong focus on continuous learning and process improvement.
+                Detail-oriented and adaptable Web Developer with hands-on experience in building responsive, user-focused applications and enhancing system performance. Combines technical expertise with creativity through a background in graphic design, and leverages transferable strengths in system optimization, process improvement, and cross-functional collaboration. Dedicated to delivering scalable, high-quality solutions while continuously advancing technical knowledge.
+              </p>
+
+              <p className="flex items-center">
+                <a
+                  href="/resume/sangangbayan_tristan_resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary">
+                  Download My Resume <Icon icon="bi:box-arrow-up-right" />
+                </a>
               </p>
 
               <div className="container">
