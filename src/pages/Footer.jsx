@@ -1,105 +1,63 @@
-import { Icon } from '@iconify/react/dist/iconify.js';
-import { Nav } from 'react-bootstrap';
-import useActiveSection from '../hooks/useActiveSection';
+import { Icon } from "@iconify/react";
+import { getFullUrl, firstWord, capitalize } from "../lib/utils";
 
-function Footer({ profile }) {
-
-  // Get first name from JSON data
-  const getFirstWord = (text) => {
-    if (text) {
-      const words = text.split(' ');
-      return words[0];
-    }
-
-    return ''
-  }
-  const firstName = getFirstWord(profile.name)
-  const email = profile.email
-
-  // Social media lists
-  const getFullUrl = (url) => (url?.startsWith("http") ? url : `https://${url}`);
-
-  const socialIcons = {
-    facebook: "bi:facebook",
-    instagram: "bi:instagram",
-    linkedin: "bi:linkedin",
-    github: "bi:github",
-  };
-
-  const sectionIds = ['home', 'about', 'resume', 'certificates', 'projects'];
-  const activeSection = useActiveSection(sectionIds);
-
-  const scrollToSection = (id) => {
-    setTimeout(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-    }, 200);
-  };
+function Footer({ profile, socialLinks = [], sections = [] }) {
+  const firstName = firstWord(profile.name);
 
   return (
-
-    <footer className="bg-dark text-white py-3">
-      <div className="container">
-        <div className="row g-md-5 my-5">
-          <div className="col-md-4 footer-section" data-aos="fade-up">
-            <h3>{firstName}.</h3>
-            <p>Find me on social media:</p>
-
-            <div className='socials' >
-              {Object.entries(socialIcons).map(([key, icon]) => {
-                const url = profile[key];
-                if (!url) return null;
-
-                return (
+    <footer id="footer" className="footer">
+      <div className="container footer__grid">
+        <div className="footer__col">
+          <h3 className="footer__brand">{firstName}.</h3>
+          <p className="footer__text">
+            Seeking new career challenges and opportunities. Let&rsquo;s start a
+            conversation!
+          </p>
+          <div className="footer__socials">
+            {socialLinks.map(
+              (link) =>
+                link.url && (
                   <a
-                    key={key}
-                    href={getFullUrl(url)}
+                    key={link.id ?? link.platform}
+                    href={getFullUrl(link.url)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ marginRight: 12 }}
-                    aria-label={key}
+                    aria-label={link.platform}
                   >
-                    <Icon icon={icon} width="22" height="22" style={{ color: "#fff" }} />
+                    <Icon icon={link.icon} width="20" height="20" />
                   </a>
-                );
-              })}
-            </div>
-          </div>
-          <div className="col-md-3 footer-section" data-aos="fade-up">
-            {sectionIds.map((id) => (
-              <Nav.Link
-                key={id}
-                className={`text-white px-0 ${activeSection === id ? 'fw-bold text-decoration-none' : ''}`}
-                onClick={() => scrollToSection(id)}
-              >
-                {id.charAt(0).toUpperCase() + id.slice(1)}
-              </Nav.Link>
-            ))}
-          </div>
-          <div className="col-md-5 footer-section" data-aos="fade-up">
-            <p>
-              Seeking new career challenges and opportunities. Let’s start a conversation!
-            </p>
-            <h3>
-              <a href="mailto:dlxks.sangangbayan@gmail.com" className="text-white text-decoration-none">{email}</a>
-            </h3>
+                ),
+            )}
           </div>
         </div>
-        <div className="row">
-          <p>
-            &copy;{new Date().getFullYear()} {firstName}. Created using{' '}
-            <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React JS</a>,{' '}
-            <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap</a>, {' '}
-            <a href="https://github.com/michalsnik/aos" target="_blank" rel="noopener noreferrer">
-              AOS
-            </a>, and{' '}
-            <a href="https://iconify.design/" target="_blank" rel="noopener noreferrer">Iconify</a>.
-          </p>
 
+        <nav className="footer__col" aria-label="Footer">
+          <h4 className="footer__heading">Navigate</h4>
+          {sections.map((id) => (
+            <a key={id} href={`#${id}`} className="footer__link">
+              {capitalize(id)}
+            </a>
+          ))}
+        </nav>
+
+        <div className="footer__col">
+          <h4 className="footer__heading">Get in touch</h4>
+          {profile.email && (
+            <a href={`mailto:${profile.email}`} className="footer__email">
+              {profile.email}
+            </a>
+          )}
         </div>
+      </div>
+
+      <div className="footer__bar">
+        <p>
+          &copy; {new Date().getFullYear()} {firstName}. Built with React,
+          Bootstrap &amp; Iconify.
+        </p>
       </div>
     </footer>
   );
 }
-
 
 export default Footer;

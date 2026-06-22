@@ -1,28 +1,17 @@
-import { Container } from "react-bootstrap";
+import SectionHeading from "../components/SectionHeading";
 import CertificationItemList from "../components/CertificationItemList";
-import certificatesData from '../data/certificates.json';
 
+const INTRO =
+  "Certificates recognizing my completion of various courses and training programs. Each one reflects my commitment to continuous learning and staying current in my field.";
 
-const Certificates = () => {
-  const certificates = certificatesData || [];
-
+function Certificates({ certificates = [] }) {
   return (
-    <>
-      <Container fluid="md" className="certificates-container" data-aos="fade-up" data-aos-duration="500">
-        <div className="contents">
-          <section id="certificates" className="certificates-section">
-            <div className="container section-title" data-aos="fade-up">
-              <h2>Certificates & Trainings</h2>
-              <p data-aos="fade-up" data-aos-delay="200">
-                I have received several certificates recognizing my successful completion of various courses and training programs. These certificates validate my skills, knowledge, and commitment to continuous learning in my professional and technical fields. Each certification reflects my dedication to improving and staying updated in my areas of expertise.
-              </p>
-
-              <CertificationItemList certificationItems={certificates} />
-            </div>
-          </section>
-        </div >
-      </Container >
-    </>
+    <div className="container section">
+      <SectionHeading eyebrow="Credentials" title="Certificates & Training">
+        {INTRO}
+      </SectionHeading>
+      <CertificationItemList items={certificates} />
+    </div>
   );
 }
 

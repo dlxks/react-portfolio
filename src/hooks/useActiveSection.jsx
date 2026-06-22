@@ -1,47 +1,32 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-const useActiveSection = (sectionIds = []) => {
-  const [activeSection, setActiveSection] = useState('');
+/**
+ * Tracks which section is currently in view using IntersectionObserver.
+ * `sectionIds` should be a stable reference (defined outside render).
+ */
+export default function useActiveSection(sectionIds = []) {
+  const [activeSection, setActiveSection] = useState(sectionIds[0] ?? "");
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 150;
+    const elements = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
 
-      for (let sectionId of sectionIds) {
-        const el = document.getElementById(sectionId);
-        if (el) {
-          const top = el.offsetTop;
-          const bottom = top + el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < bottom) {
-            setActiveSection(sectionId);
-            return;
-          }
-        }
-      }
-    };
+    if (elements.length === 0) return;
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActiveSection(visible.target.id);
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: [0, 0.25, 0.5, 1] },
+    );
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, [sectionIds]);
 
-  useEffect(() => {
-    if (activeSection) {
-      const titles = {
-        home: 'Home',
-        about: 'About',
-        resume: 'Resume',
-        projects: 'Projects',
-        skills: 'Skills',
-      }
-
-      const pageTitle = titles[activeSection] || 'My Portfolio';
-      document.title = `${pageTitle} - My Portfolio`;
-    }
-  }, [activeSection])
-
   return activeSection;
-};
-
-export default useActiveSection;
+}

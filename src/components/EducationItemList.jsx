@@ -1,14 +1,17 @@
 function EducationItemList({ item }) {
   return (
-    <>
-      <div key={item.id} className="resume-item col-lg-6" >
-        <h4 className="item-title">{item.school}</h4>
-        <h5 className="item-degree">{item.degree}</h5>
-        <p>{item.level} | {item.duration}</p>
-        <p className="item-grade">GPA/GWA: {item.grade}</p>
-      </div>
-    </>
-  )
+    <article className="timeline__item">
+      <h4 className="timeline__title">{item.school}</h4>
+      <p className="timeline__meta">
+        <span>{item.degree}</span>
+        <span className="timeline__date">{item.duration}</span>
+      </p>
+      <p className="timeline__sub">
+        {item.level}
+        {item.grade != null && ` · GPA/GWA: ${item.grade}`}
+      </p>
+    </article>
+  );
 }
 
 export default EducationItemList;

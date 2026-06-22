@@ -1,17 +1,16 @@
-import ExperienceItemDescription from "./ExperienceItemDescription";
+import BulletList from "./BulletList";
 
 function ExperienceItemList({ item }) {
   return (
-    <>
-      <div
-        className="resume-item col-lg-6"
-        data-aos="fade-up" data-aos-delay="100">
-        <h4 className="item-title">{item.position}</h4>
-        <h5>{item.company} | {item.duration}</h5>
-        <ExperienceItemDescription description={item.description} />
-      </div>
-    </>
-  )
+    <article className="timeline__item">
+      <h4 className="timeline__title">{item.position}</h4>
+      <p className="timeline__meta">
+        <span>{item.company}</span>
+        <span className="timeline__date">{item.duration}</span>
+      </p>
+      <BulletList items={item.description} />
+    </article>
+  );
 }
 
 export default ExperienceItemList;

@@ -1,65 +1,91 @@
-import { useEffect, useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/App.css';
-import NavbarContainer from './components/NavbarContainer.jsx';
-import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
-import Resume from './pages/Resume.jsx';
-import Certificates from './pages/Certificates.jsx';
-import Projects from './pages/Projects.jsx';
-import Footer from './pages/Footer.jsx';
-import { Icon } from "@iconify/react";
-import useAOS from './hooks/useAOS';
-import profileInfo from './data/profile.json';
-import resumeData from './data/resume.json';
-import projectsData from './data/projects.json';
+import { Routes, Route, Navigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/App.css";
 
+// Portfolio
+import NavbarContainer from "./components/NavbarContainer.jsx";
+import BackToTop from "./components/BackToTop.jsx";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Resume from "./pages/Resume.jsx";
+import Certificates from "./pages/Certificates.jsx";
+import Projects from "./pages/Projects.jsx";
+import Footer from "./pages/Footer.jsx";
+import useAOS from "./hooks/useAOS";
+import usePortfolioData from "./hooks/usePortfolioData";
 
-function App() {
+// Admin
+import AdminLogin from "./pages/AdminLogin.jsx";
+import AdminDashboard from "./pages/AdminDashboard.jsx";
 
-  // Back to top button
-  const [showTopBtn, setShowTopBtn] = useState(false);
+const SECTIONS = ["home", "about", "resume", "certificates", "projects"];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollThreshold = 400;
-      setShowTopBtn(window.scrollY > scrollThreshold);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () =>
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  // Animate on scroll
+function Portfolio() {
+  const { data, loading } = usePortfolioData();
   useAOS();
 
-  // User data
-  const profile = profileInfo.profile;
-  const resume = resumeData;
-  const projects = projectsData;
+  if (loading) {
+    return (
+      <div className="page-loader" role="status" aria-live="polite">
+        <span className="spinner" />
+        <span className="visually-hidden">Loading…</span>
+      </div>
+    );
+  }
+
+  const { profile, experience, education, certificates, projects, socialLinks } =
+    data;
 
   return (
     <>
-      <NavbarContainer />
+      <NavbarContainer sections={SECTIONS} />
 
-      <section id='home'><Home profile={profile} /></section>
-      <section id='about'><About profile={profile} /></section>
-      <section id='resume'><Resume resume={resume} /></section>
-      <section id='certificates'><Certificates /></section>
-      <section id='projects'><Projects projects={projects} /></section>
-      <section id='footer'><Footer profile={profile} /></section>
+      <main>
+        <section id="home">
+          <Home profile={profile} socialLinks={socialLinks} />
+        </section>
+        <section id="about">
+          <About profile={profile} />
+        </section>
+        <section id="resume">
+          <Resume
+            experience={experience}
+            education={education}
+            resumeUrl={profile.resume_url}
+          />
+        </section>
+        <section id="certificates">
+          <Certificates certificates={certificates} />
+        </section>
+        <section id="projects">
+          <Projects projects={projects} />
+        </section>
+      </main>
 
-      <button
-        onClick={scrollToTop}
-        className={`back-to-top-btn ${showTopBtn ? 'visible' : ''}`}
-      >
-        <Icon icon="bi:arrow-up-circle-fill" width="42" height="42" />
-      </button>
+      <Footer profile={profile} socialLinks={socialLinks} sections={SECTIONS} />
+      <BackToTop />
     </>
   );
 }
 
-export default App;
+function ProtectedRoute({ children }) {
+  const token = localStorage.getItem("adminToken");
+  return token ? children : <Navigate to="/admin/login" replace />;
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Portfolio />} />
+      <Route path="/admin/login" element={<AdminLogin />} />
+      <Route
+        path="/admin/*"
+        element={
+          <ProtectedRoute>
+            <AdminDashboard />
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
+  );
+}
