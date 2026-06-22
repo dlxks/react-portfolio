@@ -15,6 +15,7 @@ A modern, responsive personal portfolio website built with React and Vite, showc
 ## 🛠️ Technologies Used
 
 ### Frontend
+
 - **React 19** - Modern React with hooks and functional components
 - **Vite** - Fast build tool and development server
 - **React Router DOM v7** - Client-side routing
@@ -22,11 +23,13 @@ A modern, responsive personal portfolio website built with React and Vite, showc
 - **React Bootstrap** - Bootstrap components for React
 
 ### Styling & Animation
+
 - **AOS (Animate On Scroll)** - Scroll-triggered animations
 - **Iconify** - 100k+ icons from popular icon sets
 - **CSS3** - Custom styling with modern CSS features
 
 ### Development Tools
+
 - **ESLint** - Code linting and formatting
 - **Vite** - Build tool and development server
 - **Git** - Version control
@@ -64,23 +67,27 @@ react-portfolio/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v16 or higher)
 - npm or yarn
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/dlxks/react-portfolio.git
    cd react-portfolio
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start the development server**
+
    ```bash
    npm run dev
    ```
@@ -99,26 +106,31 @@ The built files will be in the `dist` directory.
 ## 📊 Sections Overview
 
 ### 🏠 Home
+
 - Hero section with animated introduction
 - Professional tagline and call-to-action buttons
 - Social media links
 
 ### 👤 About
+
 - Personal information and background
 - Skills and technologies
 - Professional summary
 
 ### 📄 Resume
+
 - Work experience with detailed descriptions
 - Education background
 - Technical skills and competencies
 
 ### 🏆 Certificates
+
 - Professional certifications and credentials
 - Downloadable PDF certificates
 - Achievement badges and completion dates
 
 ### 💼 Projects
+
 - Portfolio of web development projects
 - Project descriptions and technologies used
 - Live demo links and GitHub repositories
@@ -126,13 +138,17 @@ The built files will be in the `dist` directory.
 ## 🎨 Customization
 
 ### Updating Personal Information
+
 Edit `src/data/profile.json` to update:
+
 - Personal details
 - Contact information
 - Social media links
 
 ### Adding Projects
+
 Update `src/data/projects.json` with new project information:
+
 ```json
 {
   "id": 1,
@@ -145,7 +161,9 @@ Update `src/data/projects.json` with new project information:
 ```
 
 ### Adding Certificates
+
 Update `src/data/certificates.json`:
+
 ```json
 {
   "id": 1,
@@ -159,14 +177,17 @@ Update `src/data/certificates.json`:
 ## 🌐 Deployment
 
 ### Deploy to Netlify
+
 1. Build the project: `npm run build`
 2. Drag and drop the `dist` folder to Netlify
 
 ### Deploy to Vercel
+
 1. Install Vercel CLI: `npm i -g vercel`
 2. Run: `vercel --prod`
 
 ### Deploy to GitHub Pages
+
 1. Install gh-pages: `npm install --save-dev gh-pages`
 2. Add to package.json:
    ```json
