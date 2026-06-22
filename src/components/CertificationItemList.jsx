@@ -1,47 +1,48 @@
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 
-function CertificationItemList({ certificationItems }) {
+function CertificationItemList({ items = [] }) {
   return (
-    <>
-      <div className="certification-item-container">
-        {
-          certificationItems.map((item, index) => (
-            <div
-              className="certification-item"
-              key={item.id}
-              data-aos="fade-up"
-              data-aos-delay={Math.floor(Math.random() * 3) * 100}
+    <div className="card-grid">
+      {items.map((item, i) => (
+        <article
+          className="cert-card"
+          key={item.id}
+          data-aos="fade-up"
+          data-aos-delay={(i % 3) * 80}
+        >
+          <span className="cert-card__icon">
+            <Icon icon="bi:award-fill" width="22" height="22" />
+          </span>
+          <h3 className="cert-card__title">{item.title}</h3>
+          <dl className="cert-card__meta">
+            <div>
+              <dt>Issued by</dt>
+              <dd>{item.provider}</dd>
+            </div>
+            <div>
+              <dt>Date</dt>
+              <dd>{item.date}</dd>
+            </div>
+          </dl>
+          {item.file_url ? (
+            <a
+              className="cert-card__link"
+              href={item.file_url}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              < div >
-                <h5 className="certification-title fw-800">
-                  <Icon icon="bi:award" className="item-icon" />
-                  {item.title}
-                </h5>
-              </div>
-              <div className="certification-item-details">
-                <ul>
-                  <li><span className="label">Given by:</span> {item.provider}</li>
-                  <li><span className="label">Date:</span> {item.date}</li>
-                </ul>
-              </div>
-              <div className="certification-link d-flex justify-content-end">
-                {item.file_url ? (
-                  <a href={item.file_url} target="_blank" rel="noopener noreferrer" key={item.id}>
-                    View Certificate <Icon icon="bi:box-arrow-up-right" />
-                  </a>
-                ) : (
-                  <span style={{ color: '#999', fontStyle: 'italic' }}>No certificate available</span>
-                )}
-              </div>
-
-              {/* Bubble on hover  */}
-              < div className="hover_color_bubble" ></div>
-            </div >
-          ))
-        }
-      </div >
-    </>
-  )
+              View certificate
+              <Icon icon="bi:box-arrow-up-right" width="14" height="14" />
+            </a>
+          ) : (
+            <span className="cert-card__link cert-card__link--muted">
+              No file available
+            </span>
+          )}
+        </article>
+      ))}
+    </div>
+  );
 }
 
 export default CertificationItemList;

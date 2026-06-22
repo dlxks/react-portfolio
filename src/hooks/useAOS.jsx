@@ -1,18 +1,20 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-const useAOS = (options = {}) => {
+/** Initializes scroll animations, disabled when the user prefers reduced motion. */
+export default function useAOS() {
   useEffect(() => {
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
     AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
+      duration: 650,
+      easing: "ease-out-cubic",
       once: true,
-      ...options,
+      offset: 60,
+      disable: prefersReduced,
     });
-
-    AOS.refresh();
-  }, [options]);
-};
-
-export default useAOS;
+  }, []);
+}
