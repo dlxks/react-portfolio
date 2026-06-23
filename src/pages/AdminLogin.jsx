@@ -1,55 +1,57 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Container, Form, Button, Alert, Card } from 'react-bootstrap';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Container, Form, Button, Alert, Card } from "react-bootstrap";
+import { supabase } from "../lib/supabase";
 
 const AdminLogin = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
       });
-      const data = await response.json();
-      
-      if (response.ok) {
-        localStorage.setItem('adminToken', data.token);
-        navigate('/admin/dashboard');
-      } else {
-        setError(data.error || 'Login failed');
+
+      if (error) {
+        setError(error.message);
+      } else if (data.session) {
+        // Supabase persists the session automatically in localStorage
+        navigate("/admin/dashboard");
       }
     } catch {
-      setError('An error occurred. Please try again later.');
+      setError("An error occurred. Please try again later.");
     }
   };
 
   return (
-    <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
-      <Card style={{ width: '400px' }} className="shadow">
+    <Container
+      className="d-flex align-items-center justify-content-center"
+      style={{ minHeight: "100vh" }}
+    >
+      <Card style={{ width: "400px" }} className="shadow">
         <Card.Body>
           <h3 className="text-center mb-4">Admin Login</h3>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleLogin}>
-            <Form.Group className="mb-3">
-              <Form.Label>Username</Form.Label>
-              <Form.Control 
-                type="text" 
-                required 
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+            <Form.Group className="mb-3" controlId="loginEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-3" controlId="loginPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control 
-                type="password" 
-                required 
+              <Form.Control
+                type="password"
+                required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />

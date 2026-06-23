@@ -3,16 +3,19 @@ import SectionHeading from "../components/SectionHeading";
 import ExperienceItemList from "../components/ExperienceItemList";
 import EducationItemList from "../components/EducationItemList";
 
-const INTRO =
+const DEFAULT_INTRO =
   "Detail-oriented and adaptable web developer with hands-on experience building responsive, user-focused applications and improving system performance. I combine technical skill with a background in graphic design, and I'm dedicated to delivering scalable, high-quality solutions.";
 
 const FALLBACK_RESUME = "/resume/sangangbayan_tristan_resume.pdf";
 
-function Resume({ experience = [], education = [], resumeUrl }) {
+function Resume({ profile = {}, experience = [], education = [], resumeUrl }) {
   return (
     <div className="container section">
-      <SectionHeading eyebrow="My journey" title="Resume">
-        {INTRO}
+      <SectionHeading 
+        eyebrow={profile.resume_eyebrow || "My journey"} 
+        title={profile.resume_title || "Resume"}
+      >
+        {profile.resume_description || DEFAULT_INTRO}
       </SectionHeading>
 
       <div className="resume__download" data-aos="fade-up">
