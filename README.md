@@ -1,13 +1,14 @@
 # 🚀 React Portfolio - Tristan Sangangbayan
 
-A modern, responsive personal portfolio website built with React and Vite, showcasing professional experience, projects, certifications, and skills in web development.
+A modern, responsive personal portfolio website built with React and Vite, showcasing professional experience, projects, certifications, and skills in web development. Features a secure admin dashboard powered by Supabase for dynamic content management.
 
 ## ✨ Features
 
 - **Responsive Design** - Fully responsive layout that works on all devices
 - **Modern UI/UX** - Clean, professional design with smooth animations
 - **Interactive Navigation** - Smooth scrolling navigation with active section highlighting
-- **Dynamic Content** - JSON-driven content for easy updates
+- **Dynamic Content Management** - Secure admin dashboard to manage portfolio data via Supabase
+- **Comprehensive Testing** - Full unit and UI testing suite using Vitest and React Testing Library
 - **Performance Optimized** - Built with Vite for fast development and optimized builds
 - **SEO Ready** - Optimized for search engines with semantic HTML
 - **Accessibility** - WCAG compliant with keyboard navigation support
@@ -22,6 +23,16 @@ A modern, responsive personal portfolio website built with React and Vite, showc
 - **Bootstrap 5.3** - Responsive CSS framework
 - **React Bootstrap** - Bootstrap components for React
 
+### Backend & Database
+
+- **Supabase** - Backend-as-a-service for database, authentication, and file storage
+
+### Testing
+
+- **Vitest** - Blazing fast unit test framework powered by Vite
+- **React Testing Library** - Testing React components
+- **JSDOM** - Browser environment simulation
+
 ### Styling & Animation
 
 - **AOS (Animate On Scroll)** - Scroll-triggered animations
@@ -31,34 +42,26 @@ A modern, responsive personal portfolio website built with React and Vite, showc
 ### Development Tools
 
 - **ESLint** - Code linting and formatting
-- **Vite** - Build tool and development server
 - **Git** - Version control
 
 ## 📁 Project Structure
 
 ```
 react-portfolio/
-├── public/
-│   └── certificates/          # PDF certificates and credentials
+├── public/                    # Static assets
 ├── src/
-│   ├── components/            # Reusable React components
-│   │   ├── NavBar.jsx        # Navigation component
-│   │   ├── ProjectList.jsx   # Projects display component
-│   │   └── ...
-│   ├── pages/                 # Page components
-│   │   ├── Home.jsx          # Hero section
-│   │   ├── About.jsx         # About me section
-│   │   ├── Resume.jsx        # Experience & education
-│   │   ├── Projects.jsx      # Portfolio projects
-│   │   └── Certificates.jsx  # Professional certifications
-│   ├── data/                 # JSON data files
-│   │   ├── profile.json      # Personal information
-│   │   ├── projects.json     # Project details
-│   │   ├── resume.json       # Experience data
-│   │   └── certificates.json # Certification data
-│   ├── hooks/                # Custom React hooks
-│   ├── styles/               # CSS styles
-│   └── App.jsx              # Main application component
+│   ├── components/            # Reusable React components (UI & Admin)
+│   ├── pages/                 # Page components (Home, About, Admin Dashboard, etc.)
+│   ├── hooks/                 # Custom React hooks (usePortfolioData, useActiveSection, etc.)
+│   ├── lib/                   # Utility and configuration files (Supabase config)
+│   ├── styles/                # CSS styles
+│   └── App.jsx                # Main application component
+├── tests/                     # Vitest test suite
+│   ├── components/            # Component tests
+│   ├── pages/                 # Page tests
+│   ├── hooks/                 # Hook tests
+│   ├── lib/                   # Utility tests
+│   └── setupTests.js          # Vitest configuration and global mocks
 ├── package.json
 ├── vite.config.js
 └── README.md
@@ -70,6 +73,7 @@ react-portfolio/
 
 - Node.js (v16 or higher)
 - npm or yarn
+- A Supabase Project
 
 ### Installation
 
@@ -86,14 +90,30 @@ react-portfolio/
    npm install
    ```
 
-3. **Start the development server**
+3. **Set up environment variables**
+   Create a `.env` file in the root directory and add your Supabase credentials:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+
+4. **Start the development server**
 
    ```bash
    npm run dev
    ```
 
-4. **Open your browser**
+5. **Open your browser**
    Navigate to `http://localhost:5173`
+
+### Running Tests
+
+This project includes a comprehensive test suite covering components, pages, hooks, and utilities.
+
+```bash
+# Run all tests
+npm run test
+```
 
 ### Building for Production
 
@@ -106,106 +126,34 @@ The built files will be in the `dist` directory.
 ## 📊 Sections Overview
 
 ### 🏠 Home
-
 - Hero section with animated introduction
 - Professional tagline and call-to-action buttons
 - Social media links
 
 ### 👤 About
-
 - Personal information and background
 - Skills and technologies
 - Professional summary
 
 ### 📄 Resume
-
 - Work experience with detailed descriptions
 - Education background
 - Technical skills and competencies
 
 ### 🏆 Certificates
-
 - Professional certifications and credentials
 - Downloadable PDF certificates
 - Achievement badges and completion dates
 
 ### 💼 Projects
-
 - Portfolio of web development projects
 - Project descriptions and technologies used
 - Live demo links and GitHub repositories
 
-## 🎨 Customization
-
-### Updating Personal Information
-
-Edit `src/data/profile.json` to update:
-
-- Personal details
-- Contact information
-- Social media links
-
-### Adding Projects
-
-Update `src/data/projects.json` with new project information:
-
-```json
-{
-  "id": 1,
-  "title": "Project Name",
-  "description": "Project description",
-  "technologies": ["React", "Node.js", "MongoDB"],
-  "github": "https://github.com/username/project",
-  "demo": "https://project-demo.com"
-}
-```
-
-### Adding Certificates
-
-Update `src/data/certificates.json`:
-
-```json
-{
-  "id": 1,
-  "title": "Certificate Name",
-  "issuer": "Issuing Organization",
-  "date": "2024-01-15",
-  "pdf": "certificate-filename.pdf"
-}
-```
-
-## 🌐 Deployment
-
-### Deploy to Netlify
-
-1. Build the project: `npm run build`
-2. Drag and drop the `dist` folder to Netlify
-
-### Deploy to Vercel
-
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run: `vercel --prod`
-
-### Deploy to GitHub Pages
-
-1. Install gh-pages: `npm install --save-dev gh-pages`
-2. Add to package.json:
-   ```json
-   "homepage": "https://yourusername.github.io/react-portfolio",
-   "scripts": {
-     "predeploy": "npm run build",
-     "deploy": "gh-pages -d dist"
-   }
-   ```
-3. Run: `npm run deploy`
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+### 🔐 Admin Dashboard
+- Secured admin login
+- Entity and Profile manager for dynamic resume updates via Supabase
+- File uploads for Resume and Profile Images
 
 ## 🤝 Contributing
 
@@ -220,8 +168,3 @@ This project is open source and available under the [MIT License](LICENSE).
 - **Email**: dlxks.sangangbayan@gmail.com
 - **LinkedIn**: [Tristan Sangangbayan](https://www.linkedin.com/in/sangangbayantristan/)
 - **GitHub**: [@dlxks](https://github.com/dlxks)
-- **Portfolio**: [Live Demo](https://your-portfolio-url.com)
-
----
-
-⭐ **Star this repository** if you found it helpful!
