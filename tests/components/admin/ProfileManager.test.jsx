@@ -73,6 +73,7 @@ describe('ProfileManager', () => {
   });
 
   it('handles error on submit', async () => {
+    const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     const eqMock = vi.fn().mockResolvedValue({ error: new Error('Update failed') });
     const updateMock = vi.fn().mockReturnValue({ eq: eqMock });
     supabase.from.mockReturnValue({
@@ -85,5 +86,7 @@ describe('ProfileManager', () => {
     await waitFor(() => {
       expect(screen.getByText('Update failed')).toBeInTheDocument();
     });
+    
+    consoleSpy.mockRestore();
   });
 });
