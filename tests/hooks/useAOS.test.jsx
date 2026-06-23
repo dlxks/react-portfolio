@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import useAOS from '../../src/hooks/useAOS';
 import AOS from 'aos';
 

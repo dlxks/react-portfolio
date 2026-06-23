@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Form, Button, Alert, Card, Row, Col } from 'react-bootstrap';
 import { supabase } from '../../lib/supabase';
 
-const ProfileManager = ({ profileData, token, onUpdate }) => {
+const ProfileManager = ({ profileData, onUpdate }) => {
   const [formData, setFormData] = useState({ ...profileData });
   const [status, setStatus] = useState({ type: '', message: '' });
 
@@ -21,7 +21,7 @@ const ProfileManager = ({ profileData, token, onUpdate }) => {
     setStatus({ type: 'info', message: 'Uploading résumé…' });
     try {
       const fileExt = file.name.split('.').pop();
-      const fileName = `${Math.random()}.${fileExt}`;
+      const fileName = `${crypto.randomUUID()}.${fileExt}`;
       const filePath = `${fileName}`;
 
       const { error: uploadError } = await supabase.storage
@@ -47,7 +47,7 @@ const ProfileManager = ({ profileData, token, onUpdate }) => {
     setStatus({ type: 'info', message: 'Uploading profile image…' });
     try {
       const fileExt = file.name.split('.').pop();
-      const fileName = `${Math.random()}.${fileExt}`;
+      const fileName = `${crypto.randomUUID()}.${fileExt}`;
       const filePath = `${fileName}`;
 
       const { error: uploadError } = await supabase.storage

@@ -5,7 +5,6 @@ import { supabase } from "../../lib/supabase";
 const EntityManager = ({
   data,
   endpoint,
-  token,
   onUpdate,
   title,
   fields,
@@ -61,7 +60,7 @@ const EntityManager = ({
     setStatus({ type: "info", message: "Uploading file..." });
     try {
       const fileExt = file.name.split(".").pop();
-      const fileName = `${Math.random()}.${fileExt}`;
+      const fileName = `${crypto.randomUUID()}.${fileExt}`;
       const filePath = `${fileName}`;
 
       const { error: uploadError } = await supabase.storage

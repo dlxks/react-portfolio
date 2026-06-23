@@ -1,5 +1,7 @@
+/* eslint-env node */
 import sqlite3 from 'sqlite3';
 import fs from 'fs';
+import process from 'process';
 
 const db = new sqlite3.Database('./server/database.sqlite', (err) => {
   if (err) {
@@ -11,7 +13,7 @@ const db = new sqlite3.Database('./server/database.sqlite', (err) => {
 let sqlOutput = `-- Seeding data from sqlite\n\n`;
 
 const generateInserts = (tableName, mapRow = (row) => row) => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     db.all(`SELECT * FROM ${tableName}`, (err, rows) => {
       if (err) {
         console.error(`Error reading ${tableName}:`, err.message);
@@ -52,34 +54,40 @@ const runMigration = async () => {
     sqlOutput += `DELETE FROM social_links;\n\n`;
 
     await generateInserts('personal_info', (row) => {
-      const { id, ...rest } = row;
+      const { ...rest } = row;
+      delete rest.id;
       return rest;
     });
 
     await generateInserts('experience', (row) => {
-      const { id, ...rest } = row;
-      try { rest.description = JSON.parse(rest.description); } catch(e) {}
+      const { ...rest } = row;
+      delete rest.id;
+      try { rest.description = JSON.parse(rest.description); } catch { /* ignore */ }
       return rest;
     });
 
     await generateInserts('education', (row) => {
-      const { id, ...rest } = row;
+      const { ...rest } = row;
+      delete rest.id;
       return rest;
     });
 
     await generateInserts('certificates', (row) => {
-      const { id, ...rest } = row;
+      const { ...rest } = row;
+      delete rest.id;
       return rest;
     });
 
     await generateInserts('projects', (row) => {
-      const { id, ...rest } = row;
-      try { rest.description = JSON.parse(rest.description); } catch(e) {}
+      const { ...rest } = row;
+      delete rest.id;
+      try { rest.description = JSON.parse(rest.description); } catch { /* ignore */ }
       return rest;
     });
 
     await generateInserts('social_links', (row) => {
-      const { id, ...rest } = row;
+      const { ...rest } = row;
+      delete rest.id;
       return rest;
     });
 
