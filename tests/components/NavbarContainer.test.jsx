@@ -44,7 +44,7 @@ describe('NavbarContainer', () => {
   it('renders brand and navigation links', () => {
     render(<NavbarContainer sections={sections} />);
     
-    expect(screen.getByText((content, element) => content.includes('tristan'))).toBeInTheDocument();
+    expect(screen.getByText((content) => content.includes('tristan'))).toBeInTheDocument();
     
     sections.forEach(section => {
       expect(screen.getByRole('button', { name: new RegExp(section, 'i') })).toBeInTheDocument();
