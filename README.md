@@ -115,6 +115,12 @@ This project includes a comprehensive test suite covering components, pages, hoo
 npm run test
 ```
 
+### Continuous Integration (CI/CD)
+
+The project is configured to automatically run the full test suite to ensure stability:
+- **GitHub Actions:** A CI workflow (`.github/workflows/ci.yml`) automatically runs tests on every push and pull request to the repository.
+- **Deployments (Vercel, Netlify, etc.):** The build script in `package.json` has been updated to `npm run test && vite build`. This guarantees that deployments will automatically abort if any test fails.
+
 ### Building for Production
 
 ```bash
