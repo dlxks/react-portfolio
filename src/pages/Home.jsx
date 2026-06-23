@@ -9,17 +9,16 @@ function Home({ profile, socialLinks = [] }) {
       <div className="hero__overlay" />
       <div className="container hero__content">
         <p className="hero__eyebrow" data-aos="fade-up">
-          Hi, my name is
+          {profile.intro_eyebrow || "Hi, my name is"}
         </p>
         <h1 className="hero__name" data-aos="fade-up" data-aos-delay="80">
           {name}
         </h1>
         <p className="hero__role" data-aos="fade-up" data-aos-delay="160">
-          Front-End &amp; Web Developer
+          {profile.intro_title || "Front-End & Web Developer"}
         </p>
         <p className="hero__tagline" data-aos="fade-up" data-aos-delay="220">
-          I build responsive, user-focused web applications with React, Laravel,
-          and modern tooling.
+          {profile.intro_description || "I build responsive, user-focused web applications with React, Laravel, and modern tooling."}
         </p>
 
         <div className="hero__actions" data-aos="fade-up" data-aos-delay="280">

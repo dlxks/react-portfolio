@@ -33,8 +33,14 @@ function Portfolio() {
     );
   }
 
-  const { profile, experience, education, certificates, projects, socialLinks } =
-    data;
+  const {
+    profile,
+    experience,
+    education,
+    certificates,
+    projects,
+    socialLinks,
+  } = data;
 
   return (
     <>
@@ -49,16 +55,17 @@ function Portfolio() {
         </section>
         <section id="resume">
           <Resume
+            profile={profile}
             experience={experience}
             education={education}
             resumeUrl={profile.resume_url}
           />
         </section>
         <section id="certificates">
-          <Certificates certificates={certificates} />
+          <Certificates profile={profile} certificates={certificates} />
         </section>
         <section id="projects">
-          <Projects projects={projects} />
+          <Projects profile={profile} projects={projects} />
         </section>
       </main>
 
@@ -68,9 +75,35 @@ function Portfolio() {
   );
 }
 
+import { useEffect, useState } from "react";
+import { supabase } from "./lib/supabase";
+
 function ProtectedRoute({ children }) {
-  const token = localStorage.getItem("adminToken");
-  return token ? children : <Navigate to="/admin/login" replace />;
+  const [session, setSession] = useState(undefined);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  if (session === undefined) {
+    return (
+      <div className="page-loader">
+        <span className="spinner" />
+      </div>
+    );
+  }
+
+  return session ? children : <Navigate to="/admin/login" replace />;
 }
 
 export default function App() {
